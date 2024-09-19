@@ -1,0 +1,511 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+/* styles.module.css */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  margin: 0;
+  font-family: 'Google Sans', Arial, sans-serif;
+  height: 100%;
+}
+
+.heroInner {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroContent {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.heroTitle {
+  margin-bottom: 50px; 
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #202124;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #5f6368;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.indexCtas {
+  display: flex;
+  gap: 1rem;
+}
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+}
+.button {
+  display: inline-block;
+  padding: 1rem 2rem; /* 原为 0.75rem 1.5rem */
+  font-size: 1.5rem; /* 原为 1rem */
+
+  font-weight: 500;
+  
+  /* 移除文本装饰，保持不变 */
+  text-decoration: none;
+  
+  /* 增大边框半径以创建更圆润的按钮边缘 */
+  border-radius: 32px; /* 原为 24px */
+  
+  /* 保留背景色的过渡效果，但也可以根据需要调整时长 */
+  transition: background-color 0.2s;
+  
+  /* 可以添加更多样式来进一步放大视觉效果，例如阴影 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* 为了确保按钮在不同背景下都能清晰可见，您可能还需要设置背景色和文本颜色 */
+  background-color: #1a73e8; /* 示例背景色 */
+  color: #fff; /* 示例文本颜色 */
+}
+
+/* 悬停效果，可选 */
+.button:hover {
+  /* 稍微改变背景色以增加交互性 */
+  background-color: #185abc; /* 稍微深一点的蓝色 */
+  
+  /* 可以添加更多的悬停效果，如阴影加深等 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button--primary {
+  color: #fff;
+  background-color: #1a73e8;
+}
+
+.button--primary:hover {
+  background-color: #185abc;
+}
+
+.button--secondary {
+  color: #1a73e8;
+  background-color: #e8f0fe;
+}
+
+.button--secondary:hover {
+  background-color: #d2e3fc;
+}
+
+.heroVideo {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.heroVideo video {
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .heroInner {
+    flex-direction: column; /* 改为列布局 */
+    align-items: flex-start; /* 内容左对齐 */
+  }
+
+  .heroContent {
+    padding-right: 0; /* 移除右侧内边距 */
+    margin-bottom: 2rem; /* 增加底部边距以分隔内容 */
+  }
+
+  .heroVideo {
+    flex: 1 0 100%; /* 视频占满整行 */
+    max-width: 100%; /* 视频宽度100% */
+    margin-top: 2rem; /* 视频与内容之间的间距 */
+  }
+
+  /* 可以选择性地调整按钮或其他元素的样式 */
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem; /* 减小标题字体大小 */
+  }
+
+  .heroSubtitle {
+    font-size: 1rem; /* 减小副标题字体大小 */
+  }
+
+  /* 其他字体或间距调整 */
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.sectionInner {
+  margin: 0 auto;
+}
+
+.featureImage {
+  width: auto;
+  max-height: 128px;
+  margin: 0 auto;
+}
+
+.featureHeading {
+  font-size: var(--ifm-h3-font-size);
+  padding-top: 1rem;
+}
+
+.announcement {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 48px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.announcementDark {
+  background-color: #20232a;
+  color: #fff;
+  /* Reapply the primary color, because it has been locally overridden as
+   * the dark theme color */
+  --ifm-link-color: var(--ifm-color-primary);
+}
+
+.announcementInner {
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.topBanner {
+  font-size: 20px;
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBannerTitle {
+  font-size: 54px;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .topBannerTitle {
+    font-size: 40px;
+  }
+}
+
+.topBannerTitleText {
+  background: linear-gradient(
+    90deg,
+    rgb(131 58 180 / 100%) 0%,
+    rgb(253 29 29 / 100%) 50%,
+    rgb(252 176 69 / 100%) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.topBannerTitleText:hover {
+  border-bottom: solid 2px;
+  border-color: rgb(152 0 255);
+}
+
+html[data-theme='dark'] .topBannerTitleText {
+  background: linear-gradient(
+    90deg,
+    rgb(152 0 255) 0%,
+    rgb(246 41 41) 50%,
+    rgb(255 169 8) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.topBannerDescription {
+  font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .topBannerDescription {
+    font-size: 16px;
+    white-space: normal;
+  }
+}
+
+
+
+@keyframes jack-in-the-box {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroLogo {
+  animation-duration: 2s;
+  animation-name: jack-in-the-box;
+  float: right;
+  margin-top: 20px;
+  padding: 0 20px 20px;
+  height: auto;
+}
+
+.indexCtas {
+  --ifm-button-size-multiplier: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.indexCtas a,
+.indexCtas a:hover {
+  color: black;
+}
+
+.indexCtas a:last-of-type {
+  margin: 20px 36px;
+}
+
+.indexCtasGitHubButtonWrapper {
+  display: flex;
+}
+
+.indexCtasGitHubButton {
+  overflow: hidden;
+}
+
+.indexCtaTryNowButton:hover {
+  color: var(--ifm-color-primary);
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .heroLogo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .indexCtas {
+    justify-content: center;
+  }
+
+  .indexCtas a {
+    margin: 20px 36px;
+  }
+
+  .indexCtasGitHubButton {
+    display: none;
+  }
+}
+
+.tweetsSection > :global(.col) > * {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 996px) {
+  .tweetsSection > :global(.col:last-child) > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 997px) {
+  .tweetsSection > :global(.col) > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Used to test CSS insertion order */
+.test-marker-site-index-page {
+  content: 'site-index-page';
+}
+
+.viewer {
+  flex: 1; 
+  width: 100%;
+  padding: 40px;
+}
+
+.sectionContainer {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 30px;
+}
+.sectionContainer h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.formButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-image: linear-gradient(to right, #007bff, #27ae60);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.formButton:hover {
+  background-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.formButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+  .h1, h2 {
+	color: #1a1a1a;
+	font-weight: 600;
+  }
+  
+  .ul {
+	padding-left: 20px;
+	list-style-type: none;
+  }
+  
+  .a {
+	color: #3498db;
+	text-decoration: none;
+	transition: color 0.3s ease;
+  }
+  
+  .a:hover {
+	color: #2980b9;
+  }
+  
+  .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 30px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.05);
+	border-radius: 12px;
+  }
+  
+  .showcase {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 25px;
+  }
+  
+  .appcard {
+	background-color: white;
+	border: 1px solid #e0e0e0;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .appcard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  }
+  
+  .appicon {
+	width: 100%;
+	height: 140px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f9f9f9;
+  }
+  
+  .appicon img {
+	max-width: 100px;
+	max-height: 100px;
+	transition: transform 0.3s ease;
+  }
+  
+  .appcard:hover .app-icon img {
+	transform: scale(1.1);
+  }
+  
+  .appinfo {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .appnameo {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .linkcontainer a {
+    color: #3498db;
+    font-weight: 500;
+  }
+  
+  .separator {
+    margin: 0 10px; /* 添加左右两侧的空间 */
+  }
+  
+  .learnmore {
+    color: #6c757d;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .learnmore:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+  }
